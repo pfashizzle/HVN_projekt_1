@@ -58,10 +58,10 @@ void* run_thread(void* arg) {
 
         if (self->blink_enabled) {
             gpiod_line_set_value(self->led_a, 1);
-            gpiod_line_set_value(self->led_b, 1);
+            gpiod_line_set_value(self->led_b, 0);
             delay_ms(self->blink_speed_ms);
 
-            gpiod_line_set_value(self->led_a, 0);
+            gpiod_line_set_value(self->led_a, 1);
             gpiod_line_set_value(self->led_b, 0);
             delay_ms(self->blink_speed_ms);
         } else {
